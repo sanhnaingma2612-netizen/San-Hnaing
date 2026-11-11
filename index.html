@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Hnaing Ma Mhe Sein Win | Profile</title>
+  <meta name="description" content="Personal profile of San Hnaing Ma Mhe Sein Win, networking student at Youth International College.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:#0B1F3A; --indigo:#3B3FD9; --teal:#14B8A6; --sun:#FFC857;
+      --mist:#F3F6FB; --text:#22304A;
+    }
+    html { scroll-behavior:smooth; scroll-padding-top:72px; }
+    body { font-family:"Poppins","Segoe UI",system-ui,sans-serif; color:var(--text); line-height:1.75; background:#fff; }
+    /* Navbar */
+    .navbar { background:rgba(11,31,58,.92); backdrop-filter:blur(8px); }
+    .navbar .nav-link { color:rgba(255,255,255,.78); font-weight:500; }
+    .navbar .nav-link:hover, .navbar .nav-link:focus { color:var(--sun); }
+    /* Hero */
+    .hero {
+      background:linear-gradient(135deg,var(--navy) 0%,#1B2A7A 55%,#0E7C86 100%);
+      color:#fff; padding:6rem 0 5rem; position:relative; overflow:hidden;
+    }
+    .hero::before {
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.35) 2px, transparent 3px),
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size:110px 110px;
+    }
+    .hero .container { position:relative; }
+    .hero-badge { display:inline-block; background:rgba(255,200,87,.15); color:var(--sun); border:1px solid rgba(255,200,87,.5); padding:.25rem .9rem; border-radius:50px; font-size:.9rem; font-weight:500; }
+    .hero h1 { font-weight:700; line-height:1.2; }
+    .photo-wrap { display:inline-block; padding:10px; border-radius:50%; background:linear-gradient(135deg,var(--sun),var(--teal)); box-shadow:0 20px 50px rgba(0,0,0,.35); }
+    .profile-photo { width:270px; height:270px; object-fit:cover; border-radius:50%; display:block; border:5px solid var(--navy); }
+    .btn-sun { background:var(--sun); color:var(--navy); font-weight:600; border:0; border-radius:50px; padding:.65rem 1.6rem; }
+    .btn-sun:hover { background:#ffb92e; color:var(--navy); }
+    .btn-ghost { border:2px solid rgba(255,255,255,.7); color:#fff; border-radius:50px; padding:.6rem 1.6rem; font-weight:500; }
+    .btn-ghost:hover { background:#fff; color:var(--navy); }
+    /* Quick facts strip */
+    .facts { margin-top:-2.5rem; position:relative; z-index:2; }
+    .fact { background:#fff; border-radius:16px; padding:1.1rem 1.25rem; box-shadow:0 10px 30px rgba(11,31,58,.12); height:100%; display:flex; gap:.9rem; align-items:center; }
+    .fact i { font-size:1.7rem; color:var(--indigo); }
+    .fact small { color:#6b7a93; display:block; line-height:1.2; }
+    .fact strong { font-weight:600; }
+    /* Sections */
+    section { padding:4.5rem 0; }
+    .bg-mist { background:var(--mist); }
+    .section-title { font-weight:700; color:var(--navy); margin-bottom:.4rem; }
+    .section-sub { color:#6b7a93; margin-bottom:2.2rem; }
+    .section-title::after { content:""; display:block; width:56px; height:4px; border-radius:4px; background:linear-gradient(90deg,var(--indigo),var(--teal)); margin-top:.5rem; }
+    .card-soft { border:0; border-radius:18px; box-shadow:0 8px 28px rgba(11,31,58,.08); height:100%; }
+    .icon-bubble { width:52px; height:52px; border-radius:14px; display:grid; place-items:center; font-size:1.5rem; color:#fff; background:linear-gradient(135deg,var(--indigo),var(--teal)); flex:none; }
+    /* Skills */
+    .progress { height:10px; border-radius:10px; background:#E3E9F3; }
+    .progress-bar { background:linear-gradient(90deg,var(--indigo),var(--teal)); border-radius:10px; }
+    .skill { margin-bottom:1.2rem; }
+    .skill .label { display:flex; justify-content:space-between; font-weight:500; }
+    .tag { display:inline-block; background:#fff; border:1px solid #D5DDEC; color:var(--navy); border-radius:50px; padding:.25rem .9rem; margin:0 .35rem .5rem 0; font-size:.9rem; font-weight:500; }
+    /* Timeline for goals */
+    .goal { position:relative; padding-left:2rem; padding-bottom:1.4rem; border-left:3px solid #D5DDEC; margin-left:.6rem; }
+    .goal:last-child { padding-bottom:0; }
+    .goal::before { content:""; position:absolute; left:-10px; top:.35rem; width:17px; height:17px; border-radius:50%; background:var(--teal); border:3px solid #fff; box-shadow:0 0 0 2px var(--teal); }
+    /* Contact */
+    .contact-item { display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem; background:#fff; border-radius:14px; box-shadow:0 6px 20px rgba(11,31,58,.07); margin-bottom:.9rem; text-decoration:none; color:var(--text); transition:transform .15s; }
+    .contact-item:hover { transform:translateX(4px); color:var(--indigo); }
+    .contact-item i { font-size:1.4rem; color:var(--indigo); }
+    footer { background:var(--navy); color:rgba(255,255,255,.65); padding:1.6rem 0; }
+    #toTop { position:fixed; right:18px; bottom:18px; width:46px; height:46px; border-radius:50%; border:0; background:var(--indigo); color:#fff; font-size:1.2rem; box-shadow:0 6px 18px rgba(0,0,0,.25); display:none; }
+    #toTop.show { display:block; }
+    a:focus-visible, .btn:focus-visible, button:focus-visible { outline:3px solid var(--sun); outline-offset:2px; }
+    @media (max-width:575px) {
+      .profile-photo { width:210px; height:210px; }
+      .hero { padding:4rem 0 4.5rem; }
+      section { padding:3.2rem 0; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .contact-item { transition:none; } }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#home"><i class="bi bi-hdd-network me-2"></i>Mhe Sein Win</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#goals">Goals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-7 order-2 order-md-1">
+          <span class="hero-badge mb-3"><i class="bi bi-wifi me-1"></i> Networking Student</span>
+          <h1 class="display-5 mt-3">Hi, I'm San Hnaing Ma Mhe Sein Win</h1>
+          <p class="lead mt-3 mb-4">I study at Youth International College and I am skilled in computer networking. I enjoy helping people, working in a team and keeping good relationships with everyone around me.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#contact" class="btn btn-sun btn-lg"><i class="bi bi-chat-dots me-1"></i> Contact me</a>
+            <a href="#skills" class="btn btn-ghost btn-lg">See my skills</a>
+          </div>
+        </div>
+        <div class="col-md-5 order-1 order-md-2 text-center">
+          <div class="photo-wrap">
+            <!-- Put your photo in the same folder and name it profile.jpg -->
+            <img src="1.jpg" alt="Photo of San Hnaing Ma Mhe Sein Win" class="profile-photo"
+                 onerror="this.src='https://placehold.co/400x400/0B1F3A/FFFFFF?text=Your+Photo'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick facts -->
+  <div class="container facts">
+    <div class="row g-3">
+      <div class="col-md-4"><div class="fact"><i class="bi bi-person-badge"></i><div><small>Name</small><strong>San Hnaing Ma Mhe Sein Win</strong></div></div></div>
+      <div class="col-md-4"><div class="fact"><i class="bi bi-mortarboard"></i><div><small>College</small><strong>Youth International College</strong></div></div></div>
+      <div class="col-md-4"><div class="fact"><i class="bi bi-router"></i><div><small>Field</small><strong>Computer Networking</strong></div></div></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <h2 class="section-title">About me</h2>
+            <p class="section-sub">A little about who I am</p>
+            <p>My name is San Hnaing Ma Mhe Sein Win. I am a student at Youth International College, where I am learning how computers and devices connect and communicate with each other.</p>
+            <p>I am good at building relationships. I listen carefully, speak politely and like to work with others to finish tasks well. I am skilled in networking and I enjoy learning how networks are planned, set up and kept secure.</p>
+            <p class="mb-0">I am always ready to learn new things and I take my studies seriously.</p>
+          </div>
+          <div class="col-lg-5">
+            <div class="card card-soft p-4">
+              <h3 class="h5 mb-3">What I value</h3>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Honesty and respect</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Teamwork</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Continuous learning</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Responsibility</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="bg-mist">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <p class="section-sub">Where I am studying</p>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="card card-soft p-4">
+              <div class="d-flex gap-3">
+                <div class="icon-bubble"><i class="bi bi-building"></i></div>
+                <div>
+                  <h3 class="h5 mb-1">Youth International College</h3>
+                  <p class="text-muted mb-2">Currently studying</p>
+                  <p class="mb-0">I am studying IT with a focus on networking. I learn through lessons, group work and practical assignments.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-sub">What I can do</p>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card card-soft p-4">
+              <h3 class="h5 mb-4"><i class="bi bi-gear-wide-connected text-primary me-2"></i>Technical skills</h3>
+              <div class="skill">
+                <div class="label"><span>Networking</span><span>Strong</span></div>
+                <div class="progress" role="progressbar" aria-label="Networking" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:85%"></div></div>
+              </div>
+              <div class="skill">
+                <div class="label"><span>Troubleshooting</span><span>Good</span></div>
+                <div class="progress" role="progressbar" aria-label="Troubleshooting" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:70%"></div></div>
+              </div>
+              <div class="skill">
+                <div class="label"><span>HTML & CSS</span><span>Learning</span></div>
+                <div class="progress" role="progressbar" aria-label="HTML and CSS" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:55%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card card-soft p-4">
+              <h3 class="h5 mb-4"><i class="bi bi-people-fill text-primary me-2"></i>Personal skills</h3>
+              <div class="d-flex gap-3 mb-3"><div class="icon-bubble"><i class="bi bi-people"></i></div><div><strong>Good relationships</strong><br><span class="text-muted">I get along well with classmates, teachers and clients.</span></div></div>
+              <div class="d-flex gap-3 mb-3"><div class="icon-bubble"><i class="bi bi-chat-heart"></i></div><div><strong>Communication</strong><br><span class="text-muted">I explain my ideas clearly and listen to others.</span></div></div>
+              <div class="d-flex gap-3"><div class="icon-bubble"><i class="bi bi-diagram-3"></i></div><div><strong>Teamwork</strong><br><span class="text-muted">I share work fairly and support my team.</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goals -->
+    <section id="goals" class="bg-mist">
+      <div class="container">
+        <h2 class="section-title">My goals</h2>
+        <p class="section-sub">Where I want to go</p>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="goal"><h3 class="h6 mb-1">Now</h3><p class="mb-0">Finish my studies at Youth International College with good results.</p></div>
+            <div class="goal"><h3 class="h6 mb-1">Next</h3><p class="mb-0">Improve my networking and web skills with more practice and projects.</p></div>
+            <div class="goal"><h3 class="h6 mb-1">Future</h3><p class="mb-0">Work as a network professional and keep learning new technology.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact me</h2>
+        <p class="section-sub">Feel free to get in touch</p>
+        <div class="row">
+          <div class="col-lg-7">
+            <a class="contact-item" href="tel:+95XXXXXXXXX"><i class="bi bi-telephone-fill"></i><span>+95 9 XXX XXX XXX</span></a>
+            <a class="contact-item" href="mailto:yourname@example.com"><i class="bi bi-envelope-fill"></i><span>yourname@example.com</span></a>
+            <a class="contact-item" href="https://github.com/your-username"><i class="bi bi-github"></i><span>github.com/your-username</span></a>
+            <a class="contact-item" href="#home"><i class="bi bi-geo-alt-fill"></i><span>Youth International College</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center">
+    <small>© 2026 San Hnaing Ma Mhe Sein Win. Made with HTML, CSS and Bootstrap.</small>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 400));
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>
